@@ -1,14 +1,9 @@
-use anyhow::{Context, Result};
-use async_trait::async_trait;
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_sts::error::SdkError;
-use aws_sdk_sts::operation::get_caller_identity::GetCallerIdentityError;
-use aws_sdk_sts::{config::Region, Client};
+
+use aws_sdk_sts::config::Region;
 use aws_types::SdkConfig;
-use clap::ValueEnum;
+use clap::{Parser, ValueEnum};
 use log::info;
-use mockall::*;
-use serde_json::json;
 use std::fmt::Debug;
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ValueEnum)]
@@ -20,7 +15,7 @@ pub enum OutputType {
 }
 
 #[derive(Debug, Parser)]
-struct Opt {
+pub struct Opt {
     /// The AWS Region.
     #[clap(short, long)]
     region: Option<String>,
@@ -29,9 +24,6 @@ struct Opt {
     #[clap(short, long)]
     profile: Option<String>,
 }
-
-
-
 
 pub fn get_region_provider(region: Option<String>) -> RegionProviderChain {
     info!("Getting region details");
