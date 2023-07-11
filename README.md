@@ -7,7 +7,7 @@ This Rust AWS library is a shared tool that facilitates the development of vario
 ## Usage
 To add using cargo use:
 ```bash
-cargo add 'git+https://github.com/aws-cli-tools/aws-cli-lib.git#branch=main'
+cargo add --git "https://github.com/aws-cli-tools/aws-cli-lib.git"
 ```
 And in code:
 ```rust
