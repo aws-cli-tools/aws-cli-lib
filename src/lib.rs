@@ -18,11 +18,11 @@ pub enum OutputType {
 pub struct Opt {
     /// The AWS Region.
     #[clap(short, long)]
-    region: Option<String>,
+    pub region: Option<String>,
 
     /// Which profile to use.
     #[clap(short, long)]
-    profile: Option<String>,
+    pub profile: Option<String>,
 }
 
 pub fn get_region_provider(region: Option<String>) -> RegionProviderChain {
