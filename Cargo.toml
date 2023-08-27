@@ -4,11 +4,11 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-aws-config = { version = "0.55.3", default-features = false, features = ["rustls"] }
-aws-sdk-sts = "0.28.0"
-aws-types = "0.55.3"
-clap = { version = "4.3.9", features = ["derive"] }
+aws-config = { version = "0.56.1", default-features = false, features = ["rustls"] }
+aws-sdk-sts = "0.30.0"
+aws-types = "0.56.1"
+clap = { version = "4.4.0", features = ["derive"] }
 env_logger = "0.10.0"
-log = "0.4.19"
-serde_json = "1.0.99"
+log = "0.4.20"
+serde_json = "1.0.105"
 
